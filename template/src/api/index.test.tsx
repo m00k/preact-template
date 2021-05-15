@@ -1,4 +1,4 @@
-import { categories, CATEGORIES_TOTAL, categoriesWithItems, itemsTotalByGroupIndex } from '../src/api';
+import { categories, CATEGORIES_TOTAL, categoriesWithItems, itemsTotalByGroupIndex } from './index';
 
 describe('api', () => {
     test('should generate sample data', () => {

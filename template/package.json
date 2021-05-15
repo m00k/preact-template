@@ -9,7 +9,7 @@
     "dev": "preact watch --sw=false",
     "dev:ssl": "preact watch --https",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "test": "jest ./tests",
+    "test": "jest",
     "prepare-gh-pages": "rm .gh-pages -rf && mkdir .gh-pages && npm run build && cp -r build/* .gh-pages/ && cp .gitignore .gh-pages"
   },
   "eslintConfig": {
@@ -26,26 +26,21 @@
     "preact": "^10.3.1"
   },
   "devDependencies": {
-    "@types/enzyme": "^3.10.5",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/preact": "^2.0.1",
+    "@testing-library/user-event": "^13.1.9",
     "@types/jest": "^26.0.8",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-preact-pure": "^2.2.0",
     "eslint": "^6.8.0",
     "eslint-config-preact": "^1.1.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.2.2",
     "jest-preset-preact": "^4.0.2",
     "preact-cli": "^3.0.0",
     "preact-render-to-string": "^5.1.19",
     "sirv-cli": "^1.0.0-next.3",
+    "ts-jest": "^26.5.6",
     "typescript": "^3.7.5"
-  },
-  "jest": {
-    "preset": "jest-preset-preact",
-    "setupFiles": [
-      "<rootDir>/tests/__mocks__/browserMocks.ts",
-      "<rootDir>/tests/__mocks__/setupTests.ts"
-    ]
   }
 }
