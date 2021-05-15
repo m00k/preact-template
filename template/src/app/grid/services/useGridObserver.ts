@@ -42,10 +42,10 @@ export const useGridObserver = <T>(
         entries.forEach(e => bodyIntersectionsRef.current.set(keyAccessor(e), e))
         const nextActiveKey = calcKeyWithMaxIntersectionRatio(bodyIntersectionsRef.current)
         setActiveKey(nextActiveKey)
-    }, [])
+    }, [keyAccessor])
 
     const observer = useMemo(() => {
-        const observerOptions = { 
+        const observerOptions = {
             threshold: THRESHOLD,
             root: containerRef?.current
         }

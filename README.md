@@ -1,4 +1,4 @@
-# Preact TypeScript starter project
+# Preact starter project
 
 ## Documentation
 
@@ -11,7 +11,7 @@
 
 ```bash
 $ npm install -g preact-cli
-$ preact create typescript my-project
+$ preact create m00k/preact-template my-project
 $ cd my-project
 $ npm install
 $ npm run dev
