@@ -10,8 +10,7 @@
 ## Usage
 
 ```bash
-$ npm install -g preact-cli
-$ preact create m00k/preact-template my-project
+$ npx preact-cli create m00k/preact-template my-project
 $ cd my-project
 $ npm install
 $ npm run dev
