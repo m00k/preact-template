@@ -1,13 +1,17 @@
 import { Fragment, h, VNode } from 'preact';
 import { useEffect, useRef } from 'preact/hooks';
-import { categories, categoriesWithItems } from '../../api';
+import * as VM from '../../api/model';
 import Grid from './components';
 import { keyAccessor, useGridObserver } from './services';
 
 const GridBlock = ({
-    initialIndex
+  initialIndex,
+  groups,
+  groupsWithItems,
 }: {
-    initialIndex: number;
+  initialIndex: number;
+  groups: VM.Group[];
+  groupsWithItems: Array<Array<VM.Item>>;
 }): VNode => {
     const containerRef = useRef<HTMLElement>()
     const [activeIndex, groupRefCallback] = useGridObserver<number>(initialIndex, keyAccessor, containerRef)
@@ -16,7 +20,7 @@ const GridBlock = ({
     return (
         <Fragment>
             <Grid.Container ref={containerRef}>
-                {categories.map(group => (
+                {groups.map(group => (
                     <Grid.Group
                         key={group.id}
                         ref={groupRefCallback}
@@ -25,7 +29,7 @@ const GridBlock = ({
                             containerRef,
                         }}>
                         <Grid.ItemList>
-                            {categoriesWithItems[group.id].map(item => (
+                            {groupsWithItems[group.id].map(item => (
                                 <Grid.ItemDetail key={item.id} {...{ item }} />)
                             )}
                         </Grid.ItemList>
