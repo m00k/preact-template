@@ -1,6 +1,6 @@
 {
-  "name": "intersection-observer-grid",
-  "short_name": "intersection-observer-grid",
+  "name": "preact-template",
+  "short_name": "preact-template",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

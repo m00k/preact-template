@@ -8,10 +8,11 @@
  const observe = jest.fn();
  const unobserve = jest.fn();
 
- window.IntersectionObserver = jest.fn(() => ({
-   observe,
-   unobserve,
- }))
+ Object.defineProperty(window, 'IntersectionObserver', {
+  value: jest.fn(() => ({
+    observe,
+    unobserve,
+  }))});
 
 const sessionStorageMock = (() => {
 	let store = { };
